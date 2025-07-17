@@ -116,7 +116,7 @@ builtin.colors.tailwind as tw
             } 
     //Actual tab menu
     "tab_menu"
-        GridNode{grid_auto_flow:Column}
+        GridNode{grid_auto_flow:Column column_gap:10px}
         "info"
             FlexNode{justify_main:Center}
             "text"
@@ -126,7 +126,7 @@ builtin.colors.tailwind as tw
         "exit"
             FlexNode{justify_main:Center}
             "text"
-                TextLine{ text: "Exit button"}
+                TextLine{ text: "Exit"}
                 TextLineColor(Hsla{ hue:60 saturation:0.85 lightness:0.90 alpha:1.0 })
 
     //This is what changes based on menu selection
