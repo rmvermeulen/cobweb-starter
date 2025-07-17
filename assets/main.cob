@@ -116,15 +116,35 @@ builtin.colors.tailwind as tw
             } 
     //Actual tab menu
     "tab_menu"
+        RadioGroup
         GridNode{grid_auto_flow:Column column_gap:10px}
         "info"
+            RadioButton
             FlexNode{justify_main:Center}
+            Multi<Animated<BackgroundColor>>[
+                {
+                    idle: Hsla{ hue:221 saturation:0.5 lightness:0.05 alpha:0.5 }
+                }
+                {
+                    state: [Selected]
+                    idle: Hsla{ hue:221 saturation:0.5 lightness:0.20 alpha:0.5 }
+                }
+            ]  
             "text"
                 TextLine{ text: "Info" }
                 TextLineColor(Hsla{ hue:60 saturation:0.85 lightness:0.90 alpha:1.0 })
-            
         "exit"
+            RadioButton
             FlexNode{justify_main:Center}
+            Multi<Animated<BackgroundColor>>[
+                {
+                    idle: Hsla{ hue:221 saturation:0.5 lightness:0.05 alpha:0.5 }
+                }
+                {
+                    state: [Selected]
+                    idle: Hsla{ hue:221 saturation:0.5 lightness:0.20 alpha:0.5 }
+                }
+            ]  
             "text"
                 TextLine{ text: "Exit"}
                 TextLineColor(Hsla{ hue:60 saturation:0.85 lightness:0.90 alpha:1.0 })

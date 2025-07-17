@@ -23,7 +23,7 @@ fn setup_ui(mut commands: Commands, mut scene_builder: SceneBuilder, time: Res<T
             // Get entity to place in our scene
             let tab_content_entity = sh.get("tab_content").id();
             sh.edit("tab_menu::info", |scene_handle| {
-                scene_handle.on_pressed(move |mut c: Commands, mut s: SceneBuilder| {
+                scene_handle.on_select(move |mut c: Commands, mut s: SceneBuilder| {
                     c.get_entity(tab_content_entity)
                         .unwrap()
                         .despawn_related::<Children>();
@@ -33,7 +33,7 @@ fn setup_ui(mut commands: Commands, mut scene_builder: SceneBuilder, time: Res<T
                 });
             });
             sh.edit("tab_menu::exit", |scene_handle| {
-                scene_handle.on_pressed(move |mut c: Commands, mut s: SceneBuilder| {
+                scene_handle.on_select(move |mut c: Commands, mut s: SceneBuilder| {
                     c.get_entity(tab_content_entity)
                         .unwrap()
                         .despawn_related::<Children>();
