@@ -98,7 +98,6 @@ builtin.colors.tailwind as tw
                     TextLine{text:"Exit"}
             }
     "settings"
-        BackgroundColor($tw::AMBER_500)
         FlexNode{min_width:300px min_height:150px}
         Splat<Margin>(auto)
         Splat<Border>(2px)
@@ -115,3 +114,37 @@ builtin.colors.tailwind as tw
                     "shim"
                         +list_items{}
             } 
+    //Actual tab menu
+    "tab_menu"
+        GridNode{grid_auto_flow:Column}
+        "info"
+            FlexNode{justify_main:Center}
+            "text"
+                TextLine{ text: "Info" }
+                TextLineColor(Hsla{ hue:60 saturation:0.85 lightness:0.90 alpha:1.0 })
+            
+        "exit"
+            FlexNode{justify_main:Center}
+            "text"
+                TextLine{ text: "Exit button"}
+                TextLineColor(Hsla{ hue:60 saturation:0.85 lightness:0.90 alpha:1.0 })
+
+    //This is what changes based on menu selection
+    "tab_content"
+        GridNode{ height:25vh }
+        BackgroundColor(Hsla{ hue:221 saturation:0.5 lightness:0.20 alpha:0.5 })
+
+    "footer_content"
+        FlexNode{justify_main:Center}
+        "text"
+            TextLine{ text: "I don't change" }
+            TextLineColor(Hsla{hue:0 saturation:0.00 lightness:0.85 alpha:1.0})
+
+"info_tab"
+    FlexNode{justify_main:Center}
+    TextLine{text:"You are in the info tab"}
+
+"exit_tab"
+    //Not implemented
+    FlexNode{justify_main:Center}
+    TextLine{text:"Click me to quit"}
